@@ -161,7 +161,6 @@ class WebSocketClient:
     async def _send_ping(self, websocket) -> None:
         while True:
             try:
-               間にೀ0
                 message = {
                     "id": str(uuid.uuid4()),
                     "version": "1.0.0",
@@ -283,7 +282,6 @@ class ProxyManager:
     async def start(self, max_proxies: int) -> None:
         await self.load_proxies()
         available_proxies = {p for p in self.all_proxies if p not in BANNED_PROXIES or time.time() >= BANNED_PROXIES[p]}
-        tasks = {}
         if not available_proxies and not self.all_proxies:
             logger.info("🌐 No proxies found, running without proxy.")
             tasks = {asyncio.create_task(self._run_client(None, device_id)): (None, device_id) for device_id in self.device_ids[:max_proxies]}
@@ -295,7 +293,7 @@ class ProxyManager:
             self.active_proxies = set(selected)
             tasks = {asyncio.create_task(self._run_client(proxy, device_id)): (proxy, device_id) for proxy, device_id in zip(self.active_proxies, self.device_ids)}
 
-        while tasks:
+        while True:
             done, pending = await asyncio.wait(tasks.keys(), return_when=asyncio.FIRST_COMPLETED)
             for task in done:
                 proxy, device_id = tasks.pop(task)
@@ -345,7 +343,7 @@ async def load_device_ids() -> list:
     try:
         with open(DEVICE_FILE, "r") as device_file:
             device_data = json.load(device_file)
-        return device_data.get("device_ids", [])
+        return device_data.get("device_IDS", [])
     except Exception as e:
         logger.error(f"❌ Error loading device IDs: {str(e)}")
         return []
@@ -382,6 +380,7 @@ async def device_input(existing_count: int) -> list:
 async def main() -> None:
     print(f"""{Fore.YELLOW + Style.BRIGHT}
 ADB NODE -- 𝐡𝐭𝐭𝐩𝐬://𝐭.𝐦𝐞/airdropbombnode
+ [ ITSMESATYAVIR ]
 {Style.RESET_ALL}""")
     print(f"{Fore.LIGHTGREEN_EX}GrassBot - AUTO FARMING {Style.RESET_ALL}")
     print(f"{Fore.RED}========================================{Style.RESET_ALL}")
