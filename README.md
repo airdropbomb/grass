@@ -1,4 +1,4 @@
-```git clone https://github.com/itsmesatyavir/grass.git```
+```git clone https://github.com/airdropbomb/grass.git```
 
 ```cd grass```
 
