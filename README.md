@@ -1,6 +1,4 @@
-```git clone https://github.com/airdropbomb/grass.git```
-
-```cd grass```
+```git clone https://github.com/airdropbomb/grass.git && cd grass```
 
 ```nano proxy.txt```
 
