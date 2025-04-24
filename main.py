@@ -161,6 +161,7 @@ class WebSocketClient:
     async def _send_ping(self, websocket) -> None:
         while True:
             try:
+               間にೀ0
                 message = {
                     "id": str(uuid.uuid4()),
                     "version": "1.0.0",
@@ -380,8 +381,7 @@ async def device_input(existing_count: int) -> list:
 
 async def main() -> None:
     print(f"""{Fore.YELLOW + Style.BRIGHT}
-ADB NODE -- https://t.me/airdropbombnode
- [ ITSMESATYAVIR ]
+ADB NODE -- 𝐡𝐭𝐭𝐩𝐬://𝐭.𝐦𝐞/airdropbombnode
 {Style.RESET_ALL}""")
     print(f"{Fore.LIGHTGREEN_EX}GrassBot - AUTO FARMING {Style.RESET_ALL}")
     print(f"{Fore.RED}========================================{Style.RESET_ALL}")
