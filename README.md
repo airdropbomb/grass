@@ -1,9 +1,19 @@
-```git clone https://github.com/airdropbomb/grass.git && cd grass```
+```
+git clone https://github.com/airdropbomb/grass.git && cd grass
+```
 
-```nano proxy.txt```
+```
+nano proxy.txt
+```
 
-```pip install -r requirements.txt```
 
-```nano config.json```
+pip install -r requirements.txt
+```
 
-```python main.py```
+```
+nano config.json
+```
+
+```
+python main.py
+```
